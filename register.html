@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/register.css">
+    <title>Register</title>
+
+</head>
+
+<body>
+
+    <div class="display-container">
+        <form action="/action_page.php">
+
+            <div class="imgcontainer">
+                <img src="img/logo.png" alt="SERVICE SALE" class="logo">
+            </div>
+            <h2>Cadastro</h2>
+            <div class="container">
+                <div>
+                    <label for="username"><b>Nome de Usuário</b></label> <br>
+                    <input id="input_username" type="text" placeholder="Nome de Usuário" name="username" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="email"><b>Email</b></label> <br>
+                    <input id="input_email" type="email" placeholder="exemplo@email.com" name="email" required>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="psw"><b>Senha</b></label> <br>
+                    <input id="input_password" type="password" placeholder="Senha" name="psw" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="repsw"><b>Confirme sua senha</b></label> <br>
+                    <input id="input_retypepassword" type="password" placeholder="Confirme sua senha" name="repsw"
+                        required>
+                </div>
+
+                <br>
+
+                <input class="btn" type="button" name="" value="Cadastrar" onclick="register()">
+                <!-- <button >Cadastrar</button> -->
+
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+    <script src="js/firebase_auth.js"></script>
+</body>
+
+</html>
