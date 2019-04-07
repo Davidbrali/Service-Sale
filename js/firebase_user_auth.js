@@ -30,8 +30,30 @@ function login() {
   });
 }
 
+/**
+ * Realiza/Cadastra um usuário com a conta do Facebook.
+ */
 function loginWithFacebook() {
   var provider = new firebase.auth.FacebookAuthProvider();
+
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+
+    window.location.href = "./../pages/index.html";
+  }).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
 }
 
 /**
@@ -56,8 +78,23 @@ function loginWithGoogle() {
     }
 
     firebase.database().ref('usuarios/' + user.displayName).set(userGoogle).then(() => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+
       alert('Novo usuário: ' + email)
     }).catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+
       console.log(error.code)
       console.log(error.message)
     })
@@ -90,7 +127,7 @@ function register() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
       firebase.database().ref('usuarios/' + username).set(user).then(() => {
-        alert('Novo usuário: ' + email)
+        window.location.href = "./../pages/index.html";
       }).catch(function (error) {
         console.log(error.code)
         console.log(error.message)
