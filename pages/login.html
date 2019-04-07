@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./../css/login.css">
 </head>
 
@@ -17,7 +18,7 @@
                         <span class="vl-innertext">ou</span>
                     </div>
 
-                    <div class="col">
+                    <div class="col" onclick="loginWithGoogle()">
                         <a href="#" class="fb btn">
                             <i class="fa fa-facebook fa-fw"></i> Login com Facebook
                         </a>
@@ -37,7 +38,7 @@
                         <input type="password" name="senha" placeholder="Senha" id="input_password" required>
                         <input type="button" value="Login" onclick="login()">
                         <div class="bottom-container">
-                            <a href="register.html" class="btn">Ainda não possui cadastro?</a>
+                            <a href="./../pages/register.html" class="btn">Ainda não possui cadastro?</a>
                         </div>
                     </div>
 
@@ -48,7 +49,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
-    <script src="./../js/firebase_user.js"></script>
+    <script src="./../js/firebase_user_auth.js"></script>
 </body>
 
 </html>
