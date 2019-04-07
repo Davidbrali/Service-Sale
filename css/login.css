@@ -64,13 +64,13 @@ input:hover,
 }
 
 /* style the submit button */
-input[type=submit] {
+input[type=button] {
     background-color: #044476;
     color: white;
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
     background-color: #00709e;
 }
 
