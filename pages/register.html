@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="icon" type="imagem/png" href="./../img/logo.png" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="./../css/register.css">
     <title>Register</title>
@@ -11,51 +12,37 @@
 <body>
 
     <div class="display-container">
-        <form>
+        <form action="javascript:void(0);">
 
             <div class="imgcontainer">
                 <img src="./../img/logo.png" alt="SERVICE SALE" class="logo">
             </div>
             <h2>Cadastro</h2>
             <div class="container">
-                <div>
-                    <label for="username"><b>Nome de Usuário</b></label> <br>
-                    <input id="input_username" type="text" placeholder="Nome de Usuário" name="username" required>
-                </div>
+                <label for="username"><b>Nome de Usuário</b></label>
+                <input id="input_username" type="text" placeholder="Ex: Maria" name="username" required>
 
-                <br>
+                <label for="email"><b>Email</b></label>
+                <input id="input_email" type="email" placeholder="exemplo@email.com" name="email" required>
 
-                <div>
-                    <label for="email"><b>Email</b></label> <br>
-                    <input id="input_email" type="email" placeholder="exemplo@email.com" name="email" required>
+                <label for="psw"><b>Senha</b></label>
+                <input id="input_password" type="password" placeholder="Máximo 10 caracteres" name="psw" required>
 
-                </div>
+                <label for="repsw"><b>Confirme sua senha</b></label>
+                <input type="password" placeholder="******" name="repsw" required>
 
-                <br>
-
-                <div>
-                    <label for="psw"><b>Senha</b></label> <br>
-                    <input id="input_password" type="password" placeholder="Senha" name="psw" required>
-                </div>
-
-                <br>
-
-                <div>
-                    <label for="repsw"><b>Confirme sua senha</b></label> <br>
-                    <input id="input_retypepassword" type="password" placeholder="Confirme sua senha" name="repsw"
-                        required>
-                </div>
-
-                <br>
-                <input type="button" value="Registrar" onclick="register()">
-                
+                <button type="submit" onclick="register()">Cadastrar</button>
 
             </div>
+
 
         </form>
     </div>
 
+    <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="imagem/png" href="./../img/logo.png" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./../css/register.css">
+    <title>Dados pessoais</title>
+
+</head>
+
+<body>
+
+    <div class="display-container">
+        <form action="javascript:void(0);">
+
+            <div class="imgcontainer">
+                <input type="image" src="./../img/name.png" alt="FOTO" class="logo">
+            </div>
+            <h2>Dados pessoais</h2>
+            <div class="container">
+                <label for="name"><b>Nome Completo</b></label>
+                <input type="text" placeholder="Ex: Maria Regina Araújo Souza" name="name" required>
+
+                <label for="username"><b>Nome de Usuário</b></label>
+                <input type="text" placeholder="Ex: Maria" name="username" required>
+
+                <label for="cpf"><b>CPF</b></label>
+                <input type="text" placeholder="Ex.: 000.000.000-00" maxlength="14" name="cpf" required>
+
+                <label for="dataNasc"><b>Data de nascimento</b></label>
+                <input type="text" placeholder="Ex.: XX/XX/XXXX" name="dataNasc" required>
+
+                <label for="telefone"><b>Telefone</b></label>
+                <input type="text" placeholder="(XX) XXXXX-XXXX" name="telefone" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="exemplo@email.com" name="email" required>
+
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="Máximo 10 caracteres" name="psw" required>
+
+
+                <button type="submit">Atualizar</button>
+
+            </div>
+
+
+        </form>
+    </div>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+
+    <script src="./../js/firebase_user_auth.js"></script>
+</body>
+
+</html>

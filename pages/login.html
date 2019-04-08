@@ -2,16 +2,17 @@
 <html>
 
 <head>
+    <link rel="icon" type="imagem/png" href="./../img/logo.png" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./../css/login.css">
+    <title>Login</title>
 </head>
 
 <body>
     <div class="display-container">
         <img class="logo" src="./../img/logo.png">
         <div class="container">
-            <form action="/action_page.php">
+            <form action="javascript:void(0);">
                 <div class="row">
                     <h2 style="text-align:center">Login</h2>
                     <div class="vl">
@@ -23,7 +24,7 @@
                             <i class="fa fa-facebook fa-fw"></i> Login com Facebook
                         </a>
 
-                        <a href="#" class="google btn " onclick="loginWithGoogle()"><i class="fa fa-google fa-fw">
+                        <a href="#" class="google btn" onclick="loginWithGoogle()"><i class="fa fa-google fa-fw">
                             </i> Login com Google+
                         </a>
 
@@ -34,11 +35,14 @@
                             <p>Ou</p>
                         </div>
 
-                        <input type="text" name="email" placeholder="Email" id="input_email" required>
-                        <input type="password" name="senha" placeholder="Senha" id="input_password" required>
-                        <input type="button" value="Login" onclick="login()">
+                        <input id="input_email" type="text" name="email" placeholder="Email" required>
+                        <input id="input_password" type="password" name="senha" placeholder="Senha" required>
+                        <input type="submit" value="Login" onclick="login()">
+
                         <div class="bottom-container">
+
                             <a href="./../pages/register.html" class="btn">Ainda não possui cadastro?</a>
+
                         </div>
                     </div>
 
@@ -47,9 +51,15 @@
         </div>
     </div>
 
+    <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-database.js"></script>
+
     <script src="./../js/firebase_user_auth.js"></script>
+
 </body>
 
 </html>

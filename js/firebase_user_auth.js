@@ -43,6 +43,7 @@ function loginWithFacebook() {
     var user = result.user;
     // ...
 
+    alert('Bem-vindo: ' + user.displayName)
     window.location.href = "./../pages/index.html";
   }).catch(function (error) {
     // Handle Errors here.
@@ -68,6 +69,7 @@ function loginWithGoogle() {
     var user = result.user;
 
     alert('Bem-vindo: ' + user.displayName)
+    window.location.href = "./../pages/index.html";
 
     var userGoogle = {
       email: user.email,
@@ -127,6 +129,7 @@ function register() {
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
       firebase.database().ref('usuarios/' + username).set(user).then(() => {
+        alert('Bem-vindo ' + username)
         window.location.href = "./../pages/index.html";
       }).catch(function (error) {
         console.log(error.code)
