@@ -11,7 +11,6 @@ var config = {
 };
 
 firebase.initializeApp(config);
-firebase.auth().useDeviceLanguage();
 
 /**
  * Realiza o login padrão com email e senha.
@@ -20,8 +19,11 @@ function login() {
   var email = document.getElementById("input_email").value
   var password = document.getElementById("input_password").value
 
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+
   firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
     alert('Bem-vindo: ' + email)
+    window.location.href = "./../pages/index.html";
   }).catch(function (error) {
     console.log(error.code)
     console.log(error.message)
@@ -29,6 +31,15 @@ function login() {
     alert('Não foi possível realizar login!')
   });
 }
+
+/**
+ * Desloga o usuário.
+ */
+function logout() {
+  firebase.auth().signOut().then(() => {
+    window.location.href = './../pages/index.html';
+  });
+};
 
 /**
  * Realiza/Cadastra um usuário com a conta do Facebook.
@@ -118,23 +129,21 @@ function register() {
   var password = document.getElementById("input_password").value
   var username = document.getElementById("input_username").value
 
-  if (isValidUsername(username)) {
-    var user = {
-      email: email,
-      nome: "",
-      sexo: "",
-      cpf: "",
-      idade: 0
-    }
+  if (isValidUsername(username)) { // Verifica se o username é válido.
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
-      firebase.database().ref('usuarios/' + username).set(user).then(() => {
-        alert('Bem-vindo ' + username)
-        window.location.href = "./../pages/index.html";
-      }).catch(function (error) {
-        console.log(error.code)
-        console.log(error.message)
-      })
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(function () { // Cria um usuário.
+      var userId = firebase.auth().currentUser.uid // Obtém o usuário.
+
+      var user = { // Inicia um objeto de usuário.
+        email: email,
+        nome: "",
+        nomedeusuario: username,
+        sexo: "",
+        cpf: "",
+        idade: 0
+      }
+
+      writeUserData(userId, user) // Escreve no banco de dados.
 
     }).catch(function (error) {
       console.log(error.code)
@@ -144,6 +153,34 @@ function register() {
   } else {
     alert("O nome de usuário não pode conter . # $ [ ]")
   }
+
+}
+
+/**
+ * Grava os dados no RealtimeDatabase
+ */
+function writeUserData(userId, user) {
+  firebase.database().ref('usuarios/' + userId).set(user).then(() => {
+    alert('Bem-vindo ' + user.nomedeusuario)
+    window.location.href = "./../pages/login.html"; // Redireciona para a página inicial.
+  }).catch(function (error) {
+    console.log(error.code)
+    console.log(error.message)
+  })
+}
+
+/**
+ * Obtém o usuário atual.
+ */
+function getUserInformations() {
+  var userId = firebase.auth().currentUser.uid // Obtém o usuário.
+
+  return firebase.database().ref('/users/' + userId).once('value').then(function (snapshot) {
+    var username = (snapshot.val() && snapshot.val().nome) || 'Anonymous';
+    var name = (snapshot.val() && snapshot.val().nomedeusuario) || 'Anonymous';
+
+    console.log('Funcionou')
+  });
 
 }
 
@@ -165,5 +202,31 @@ function isValidUsername(str) {
     }
   }
 
+  return true;
+}
+
+/**
+ * Verifica se o CPF é válido.
+ * 
+ * @param {} str 
+ */
+function checkCPf(str) {
+  var soma;
+  var resto;
+  soma = 0;
+  if (str == "00000000000") return false;
+
+  for (i = 1; i <= 9; i++) soma = soma + parseInt(str.substring(i - 1, i)) * (11 - i);
+  resto = (soma * 10) % 11;
+
+  if ((resto == 10) || (resto == 11)) resto = 0;
+  if (resto != parseInt(str.substring(9, 10))) return false;
+
+  soma = 0;
+  for (i = 1; i <= 10; i++) soma = soma + parseInt(str.substring(i - 1, i)) * (12 - i);
+  resto = (soma * 10) % 11;
+
+  if ((resto == 10) || (resto == 11)) resto = 0;
+  if (resto != parseInt(str.substring(10, 11))) return false;
   return true;
 }
