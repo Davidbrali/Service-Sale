@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Perfil</title>
+    <link rel="icon" type="imagem/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i
+                class="fa fa-bars"></i></button>
+        <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="perfil.html">Dados pessoais</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="topnav">
+        <img src="img/logo.png" alt="SERVICE SALE" class="logo">
+        <div class="container-search">
+            <form class="search" action="javascript:void(0);">
+                <input type="text" placeholder="Estou procurando por..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="boasVindas">
+        <h1>Bem-vindo à sua conta!</h1>
+        <h3>Aqui você acompanha os seus serviços e nos ajuda a te conhcecer ainda mais</h3>
+    </div>
+    <input type="image" src="img/img.png" alt="FOTO" class="foto">
+
+    <div class="tab">
+        <button class="tablinks" onclick="openOption(event, 'dados')" id="defaultOpen">Dados Pessoais</button>
+        <button class="tablinks" onclick="openOption(event, 'servicos')">Serviços</button>
+        <button class="tablinks" onclick="openOption(event, 'sair')">Sair</button>
+    </div>
+
+    <div id="dados" class="tabcontent">
+        <h2>Dados pessoais</h2>
+
+        <label for="name"><b>Nome Completo</b></label>
+        <input type="text" placeholder="Ex: Maria Regina Araújo Souza" name="name" required>
+
+        <label for="username"><b>Nome de Usuário</b></label>
+        <input type="text" placeholder="Ex: Maria" name="username" required>
+
+        <label for="cpf"><b>CPF</b></label>
+        <input type="text" placeholder="Ex.: 000.000.000-00" maxlength="14" name="cpf" required>
+
+        <label for="dataNasc"><b>Data de nascimento</b></label>
+        <input type="text" placeholder="Ex.: XX/XX/XXXX" name="dataNasc" required>
+
+        <label for="telefone"><b>Telefone</b></label>
+        <input type="text" placeholder="(XX) XXXXX-XXXX" name="telefone" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="exemplo@email.com" name="email" required>
+
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" placeholder="Máximo 10 caracteres" name="psw" required>
+
+
+        <button class='btnAtualizar' type="submit">Atualizar</button>
+    </div>
+
+    <div id="servicos" class="tabcontent">
+        <div class="servicosCad">
+            <div class="nameServ1">
+                <h3>Serviços cadastrados</h3>
+            </div>
+            <div class="conteudoServ">
+                <p>Você ainda não cadastrou nenhum serviço</p>
+            </div>
+            <a class="btnRegister" href="registerService.html">Cadastrar serviço</a>
+        </div>
+
+        <div class="servicosCont">
+            <div class="nameServ2">
+                <h3>Serviços contratados</h3>
+            </div>
+            <div class="conteudoServ">
+                <p>Você ainda não contratou nenhum serviço</p>
+            </div>
+            <a class="btnRegister" href="#">Contratar serviço</a>
+        </div>
+    </div>
+
+    <div id="cartoes" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="config" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <script>
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+
+</html>

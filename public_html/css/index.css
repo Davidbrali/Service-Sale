@@ -8,8 +8,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+    margin: auto;
+    width: 80%;
+}
+
+tr, td {
+    padding: 10px;
+    text-align: center;
+}
+
 .logo{
-    margin-left: 25px;
     max-width:90px;
     max-height:90px;
 }

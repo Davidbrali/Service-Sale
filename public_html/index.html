@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Service Sale</title>
+    <link rel="icon" type="imagem/png" href="img/logo.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i
+                class="fa fa-bars"></i></button>
+        <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="perfil.html">Dados pessoais</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+
+    <div class="topnav">
+        <a href="login.html" class="buttom-login">Login/Cadastro</a>
+        <img src="img/logo.png" alt="SERVICE SALE" class="logo">
+        <div class="container-search">
+            <form class="search" action="javascript:void(0);">
+                <input type="text" placeholder="Estou procurando por..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <table>
+            <tr>
+                <td><a class="nav-link" href="#"><img src="img/icon_domestica.png" width="48px" alt="Serviços Domésticos">
+                        <figcaption>Serviços Domésticos</figcaption>
+                    </a></td>
+                <td><a class="nav-link" href="#"><img src="img/icon_informatica.png" width="48px" alt="Informática">
+                        <figcaption>Informática</figcaption>
+                    </a>
+                </td>
+                <td><a class="nav-link" href="#"><img src="img/icon_design.png" width="48px" alt="Design">
+                        <figcaption>Design</figcaption>
+                    </a></td>
+                <td><a class="nav-link" href="#"><img src="img/icon_musica.png" width="48px" alt="Música">
+                        <figcaption>Música</figcaption>
+                    </a></td>
+                <td><a class="nav-link" href="#"><img src="img/icon_beleza.png" width="48px" alt="Beleza">
+                        <figcaption>Beleza</figcaption>
+                    </a></td>
+                <td><a class="nav-link" href="#"><img src="img/icon_fotografia.png" width="48px" alt="Fotografia">
+                        <figcaption>Fotografia</figcaption>
+                    </a></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col">
+                <div class="container">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/ex1.jpg" style="width:50%;">
+                                <div class="carousel-caption">
+                                    <h1>Contrate serviços especializados para qualquer trabalho, on-line</h1>
+
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="img/ex2.png" style="width:50%;">
+                                <div class="carousel-caption">
+                                    <h1>Contrate serviços especializados para qualquer trabalho, on-line</h1>
+
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <img src="img/ex3.png" style="width:50%;">
+
+                                <div class="carousel-caption">
+                                    <h1>Contrate serviços especializados para qualquer trabalho, on-line</h1>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONTROLE CARROSSEL -->
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="sr-only">Próximo</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+
+</html>
